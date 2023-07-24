@@ -4,12 +4,14 @@ import {
   HttpException,
   HttpStatus,
   Post,
+  Dependencies,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { authSigninDto, authSignupDto } from './dto';
 import { Bcrypt } from 'src/utils';
 import { JwtService } from '@nestjs/jwt';
 
+@Dependencies(AuthService, JwtService)
 @Controller('auth')
 export class AuthController {
   constructor(
