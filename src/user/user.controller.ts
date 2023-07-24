@@ -17,7 +17,7 @@ export class UserController {
       where: {
         id: (req as any).user.id,
       },
-
+      attributes: { exclude: ['password'] },
       include: [this.purchaseRepository],
     });
     return userAndPurchase;

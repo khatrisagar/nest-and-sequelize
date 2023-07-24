@@ -45,8 +45,7 @@ export class AuthController {
           );
         }
       }
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
       throw new HttpException('INVALID_EMAIL_PASSWORD', HttpStatus.NOT_FOUND);
     }
   }

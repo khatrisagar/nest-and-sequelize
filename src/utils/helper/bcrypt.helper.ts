@@ -9,7 +9,6 @@ export class Bcrypt {
   }
 
   async getEcryptPassword() {
-    console.log(this.password);
     const encryptedPassword = await bcrypt.hash(this.password, 10);
     return encryptedPassword;
   }

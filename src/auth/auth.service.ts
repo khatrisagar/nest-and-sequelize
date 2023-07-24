@@ -32,10 +32,7 @@ export class AuthService {
         throw new Error('Not Found');
       }
     } catch (err) {
-      throw new NotFoundException('INVALID_EMAIL_PASSWORD', {
-        cause: new Error(),
-        description: err.message,
-      });
+      throw new NotFoundException('INVALID_EMAIL_PASSWORD');
     }
   }
 }
